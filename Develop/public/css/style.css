@@ -7,18 +7,18 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: rgba(red, green, blue, alpha);
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: rgba(60,60,60);
   text-decoration: underline;
 }
 
 .dollar-amount {
-  color: #056605;
+  color: rgba(red, green, blue, alpha);
   font-weight: bold;
   margin-left: -5px;
 }
