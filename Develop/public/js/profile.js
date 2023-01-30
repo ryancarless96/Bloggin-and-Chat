@@ -3,7 +3,27 @@ const newFormHandler = async (event) => {
 
   const name = document.querySelector('#blog-name').value.trim();
   const description = document.querySelector('#blog-desc').value.trim();
+  const blogButton = document.getElementById("blog-button");
+  const blogPostCreate = async () => {
+    if (name && description) {
+      const response = await fetch(`/api/blogs`, {
+        method: 'POST',
+        body: JSON.stringify({ name, description }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Failed to create project');
+      }
+    }
+  };
 
+  blogButton.addEventListener('click', blogPostCreate)
+  
   if (name && description) {
     const response = await fetch(`/api/blogs`, {
       method: 'POST',
