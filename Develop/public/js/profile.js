@@ -4,7 +4,8 @@ const newFormHandler = async (event) => {
   const name = document.querySelector('#blog-name').value.trim();
   const description = document.querySelector('#blog-desc').value.trim();
   const blogButton = document.getElementById("blog-button");
-  const blogPostCreate = async () => {
+  const blogPostCreate = async (event) => {
+    event.preventDefault
     if (name && description) {
       const response = await fetch(`/api/blogs`, {
         method: 'POST',
@@ -15,7 +16,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        console.log("Succesffuly created!")
       } else {
         alert('Failed to create project');
       }
@@ -34,7 +35,8 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      // document.location.replace('/profile');
+      console.log("Successfully created!")
     } else {
       alert('Failed to create project');
     }
