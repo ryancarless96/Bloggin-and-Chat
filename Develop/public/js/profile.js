@@ -25,6 +25,7 @@ const newFormHandler = async (event) => {
 
   blogButton.addEventListener('click', blogPostCreate)
   
+  
   if (name && description) {
     const response = await fetch(`/api/blogs`, {
       method: 'POST',
